@@ -1,0 +1,22 @@
+1. Check all requests (GET/api/users, GET/refreshAdmins, POST/api/users, PUT/api/users/ID, DELETE/api/users/ID) should be Content type = application/json' header.
+2. Check GET/api/users return user list.
+3. Check PUT/api/users/ID save user changes.
+4. Check POST/api users returns user ID.
+5. Check POST/api users creates new user.
+6. Check GET/refreshAdmins executes after an administrator creation.
+7. Check POST/api/users with "role"="administrator" creates an administrator user.
+8. Check POST/api/users with "role"="support" creates a support user.
+9. Check POST/api/users with "role"="" creates a student user.
+10.Check POST/api/users with "role"="student" creates a student user.
+11.Check POST/api/users w/o "role" creates a student user.  
+12.Check DELETE/api/users/ID delets user with specified ID.
+13.Check the server side works on 20007 port.
+14.Check all responses (GET/api/users with incorrect Content type or w/o Content type, GET/refreshAdmins with incorrect Content type or w/o Content type, POST/api/users with incorrect Content type or w/o Content type, PUT/api/users/ID with incorrect Content type or w/o Content type, DELETE/api/users/ID with incorrect Content type or w/o Content type) should be Content type = application/json' header including incorrect requests.
+15.Check all responses of incorrect requests should be Content type = application/json' header.
+16.Check all requests (GET/api/users, GET/refreshAdmins, POST/api/users, PUT/api/users/ID, DELETE/api/users/ID) with incorrect  Content type or w/o Content type return 401 error and cancel an operation.
+17.Check default server state after restart is { id: '1', name: 'Illya Klymov', phone: '+380504020799', role: 'Administrator' },
+{ id: '2', name: 'Ivanov Ivan', phone: '+380670000002', role: 'Student', strikes: 1 },
+{ id: '3', name: 'Petrov Petr', phone: '+380670000001', role: 'Support', location: 'Kiev' }
+18.Check POST/api/users with incorrect "role" and "role" = null returns 401 error and cancels the operation.
+19.Check PUT/api/users with incorrect "role" and "role" = null returns 401 error and cancels the operation.
+20.Check requests with incorrect ID (DELETE/api/users/incorrectID, PUT/api/users/incorrectID) return 404 error and cancle an operation.
